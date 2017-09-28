@@ -35,4 +35,5 @@ int main(){
 	}
 	else 
 		printf("Invalid data");
+	return 0;
 }
