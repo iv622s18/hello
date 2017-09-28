@@ -12,26 +12,31 @@ int main(){
 	printf("%s", "Коэффициент c: ");
 	scanf("%f", &c);
 	if (check(a, b, c) == 0){
-		d = D(a, b, c);
-		if (d < 0)
-		{
-			printf("Корней нет\n");
+		if (a == 0 && b != 0 && c != 0) {
+			printf("x = %f", -c/b);
 		}
-		else if (d == 0)
-		{
-			printf("Один корень: ");
-			x1 = X(d, a, b, 1);
-			printf("x = %f\n", x1);
+		else{
+			d = D(a, b, c);
+			if (d < 0)
+			{
+				printf("Корней нет\n");
+			}
+			else if (d == 0)
+			{
+				printf("Один корень: ");
+				x1 = X(d, a, b, 1);
+				printf("x = %f\n", x1);
+			}
+			else
+			{
+				printf("Два корня\n");
+				x1 = X(d, a, b, 1);
+				x2 = X(d, a, b, -1);
+				printf("x1 = %f\n", x1);
+				printf("x2 = %f\n", x2);
+			}
+			return 0;
 		}
-		else
-		{
-			printf("Два корня\n");
-			x1 = X(d, a, b, 1);
-			x2 = X(d, a, b, -1);
-			printf("x1 = %f\n", x1);
-			printf("x2 = %f\n", x2);
-		}
-		return 0;
 	}
 	else 
 		printf("Invalid data");
